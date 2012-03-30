@@ -15,7 +15,8 @@
     self = [super init];
     if (!self) return nil;
     
-
+    [self unpackFromDictionary:dict];
+    NSLog(@"DICT %@", dict);
     
     return self;
 }

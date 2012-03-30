@@ -39,6 +39,10 @@
 		89156C061525F85600359FA1 /* UIView+position.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C041525F85600359FA1 /* UIView+position.m */; };
 		89156C0A1525F99800359FA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C091525F99800359FA1 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		89156C0D1526152C00359FA1 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C0C1526152C00359FA1 /* Event.m */; };
+		89156C2315261A6A00359FA1 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 89156C1F15261A6A00359FA1 /* CHANGELOG.md */; };
+		89156C2415261A6A00359FA1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C2115261A6A00359FA1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		89156C2515261A6A00359FA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 89156C2215261A6A00359FA1 /* README.md */; };
+		89156C3115261BD700359FA1 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C3015261BD700359FA1 /* EventCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +102,12 @@
 		89156C091525F99800359FA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		89156C0B1526152C00359FA1 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		89156C0C1526152C00359FA1 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		89156C1F15261A6A00359FA1 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		89156C2015261A6A00359FA1 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		89156C2115261A6A00359FA1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		89156C2215261A6A00359FA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		89156C2F15261BD700359FA1 /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
+		89156C3015261BD700359FA1 /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 		89156B981525E21700359FA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89156C1E15261A6A00359FA1 /* JSONKit */,
 				89156C071525F99800359FA1 /* Reachability */,
 				89156BDB1525F75500359FA1 /* ASIHTTP */,
 				89156BFE1525F79F00359FA1 /* libz.dylib */,
@@ -154,6 +165,7 @@
 		89156B9F1525E21700359FA1 /* codeatsix_ios */ = {
 			isa = PBXGroup;
 			children = (
+				89156C2E15261BD700359FA1 /* Views */,
 				89156C001525F85600359FA1 /* Categories */,
 				89156BCD1525F69D00359FA1 /* Controllers */,
 				89156BD21525F69D00359FA1 /* Models */,
@@ -253,6 +265,27 @@
 			path = Submodules/ASIHTTP/External/Reachability;
 			sourceTree = "<group>";
 		};
+		89156C1E15261A6A00359FA1 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				89156C1F15261A6A00359FA1 /* CHANGELOG.md */,
+				89156C2015261A6A00359FA1 /* JSONKit.h */,
+				89156C2115261A6A00359FA1 /* JSONKit.m */,
+				89156C2215261A6A00359FA1 /* README.md */,
+			);
+			name = JSONKit;
+			path = Submodules/JSONKit;
+			sourceTree = "<group>";
+		};
+		89156C2E15261BD700359FA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89156C2F15261BD700359FA1 /* EventCell.h */,
+				89156C3015261BD700359FA1 /* EventCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +344,8 @@
 				89156BB71525E21700359FA1 /* first@2x.png in Resources */,
 				89156BBC1525E21700359FA1 /* second.png in Resources */,
 				89156BBE1525E21800359FA1 /* second@2x.png in Resources */,
+				89156C2315261A6A00359FA1 /* CHANGELOG.md in Resources */,
+				89156C2515261A6A00359FA1 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +374,8 @@
 				89156C061525F85600359FA1 /* UIView+position.m in Sources */,
 				89156C0A1525F99800359FA1 /* Reachability.m in Sources */,
 				89156C0D1526152C00359FA1 /* Event.m in Sources */,
+				89156C2415261A6A00359FA1 /* JSONKit.m in Sources */,
+				89156C3115261BD700359FA1 /* EventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +497,7 @@
 				89156BC31525E21800359FA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

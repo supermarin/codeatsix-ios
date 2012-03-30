@@ -9,24 +9,37 @@
 #import "EventsViewController.h"
 #import "Server.h"
 #import "Event.h"
+#import "JSONKit.h"
+#import "EventCell.h"
 
 @interface EventsViewController () {
+    IBOutlet UITableView *eventsTableview;
     RequestPerformer *performer;
     NSArray *events;
 }
 @end
 
 @implementation EventsViewController
-static NSString *CellIdentifier = @"EventCell";
+static NSString *EVENT_CELL = @"EventCell";
+
+#pragma mark - Private
+
+- (NSArray *)createEventsFromDictionaries:(NSArray *)eventsInDicts {
+    NSMutableArray *allEvents = [NSMutableArray new];
+    
+    for (NSDictionary *eventInDict in eventsInDicts)
+        [allEvents addObject:[[Event alloc] initWithDictionary:eventInDict]];
+    
+    return allEvents;
+}
+
+
+
 
 #pragma mark - Tableview delegate
 
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event {
-    
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -34,9 +47,9 @@ static NSString *CellIdentifier = @"EventCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    EventCell *cell = [tableView dequeueReusableCellWithIdentifier:EVENT_CELL];
     
-    [self configureCell:cell withEvent:[events objectAtIndex:indexPath.row]];
+    [cell setEvent:[events objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -52,7 +65,8 @@ static NSString *CellIdentifier = @"EventCell";
 
 - (void)requestFinishedByPerformer:(RequestPerformer *)downloader {
 
-    NSLog(@"DOWNLOADED: %@", [downloader downloadedString]);
+    events = [self createEventsFromDictionaries:[[downloader downloadedString] objectFromJSONString]];
+    [eventsTableview reloadData];
 }
 
 
@@ -64,6 +78,14 @@ static NSString *CellIdentifier = @"EventCell";
     [super viewDidLoad];
     
     performer = [[RequestPerformer alloc] initWithDelegate:self];
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+
+    events = nil;
+    performer = nil;
+    eventsTableview = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
