@@ -15,10 +15,10 @@
 		89156BAA1525E21700359FA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156BA91525E21700359FA1 /* AppDelegate.m */; };
 		89156BAD1525E21700359FA1 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89156BAB1525E21700359FA1 /* MainStoryboard_iPhone.storyboard */; };
 		89156BB01525E21700359FA1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89156BAE1525E21700359FA1 /* MainStoryboard_iPad.storyboard */; };
-		89156BB31525E21700359FA1 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156BB21525E21700359FA1 /* FirstViewController.m */; };
+		89156BB31525E21700359FA1 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156BB21525E21700359FA1 /* EventsViewController.m */; };
 		89156BB51525E21700359FA1 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156BB41525E21700359FA1 /* first.png */; };
 		89156BB71525E21700359FA1 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156BB61525E21700359FA1 /* first@2x.png */; };
-		89156BBA1525E21700359FA1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156BB91525E21700359FA1 /* SecondViewController.m */; };
+		89156BBA1525E21700359FA1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156BB91525E21700359FA1 /* InfoViewController.m */; };
 		89156BBC1525E21700359FA1 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156BBB1525E21700359FA1 /* second.png */; };
 		89156BBE1525E21800359FA1 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156BBD1525E21700359FA1 /* second@2x.png */; };
 /* End PBXBuildFile section */
@@ -28,20 +28,20 @@
 		89156B991525E21700359FA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		89156B9B1525E21700359FA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		89156B9D1525E21700359FA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		89156BA11525E21700359FA1 /* codeatsix_ios-Info.plist */ = {isa = PBXFileReference; path = "codeatsix_ios-Info.plist"; sourceTree = "<group>"; };
+		89156BA11525E21700359FA1 /* codeatsix_ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "codeatsix_ios-Info.plist"; sourceTree = "<group>"; };
 		89156BA31525E21700359FA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89156BA51525E21700359FA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		89156BA71525E21700359FA1 /* codeatsix_ios-Prefix.pch */ = {isa = PBXFileReference; path = "codeatsix_ios-Prefix.pch"; sourceTree = "<group>"; };
-		89156BA81525E21700359FA1 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		89156BA71525E21700359FA1 /* codeatsix_ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codeatsix_ios-Prefix.pch"; sourceTree = "<group>"; };
+		89156BA81525E21700359FA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89156BA91525E21700359FA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		89156BAC1525E21700359FA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		89156BAF1525E21700359FA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		89156BB11525E21700359FA1 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
-		89156BB21525E21700359FA1 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		89156BB11525E21700359FA1 /* EventsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		89156BB21525E21700359FA1 /* EventsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		89156BB41525E21700359FA1 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		89156BB61525E21700359FA1 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		89156BB81525E21700359FA1 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
-		89156BB91525E21700359FA1 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		89156BB81525E21700359FA1 /* InfoViewController.h */ = {isa = PBXFileReference; path = InfoViewController.h; sourceTree = "<group>"; };
+		89156BB91525E21700359FA1 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		89156BBB1525E21700359FA1 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		89156BBD1525E21700359FA1 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,16 +90,16 @@
 		89156B9F1525E21700359FA1 /* codeatsix_ios */ = {
 			isa = PBXGroup;
 			children = (
+				89156BC51525E22D00359FA1 /* Models */,
+				89156BC41525E22700359FA1 /* Controllers */,
 				89156BA81525E21700359FA1 /* AppDelegate.h */,
 				89156BA91525E21700359FA1 /* AppDelegate.m */,
 				89156BAB1525E21700359FA1 /* MainStoryboard_iPhone.storyboard */,
 				89156BAE1525E21700359FA1 /* MainStoryboard_iPad.storyboard */,
-				89156BB11525E21700359FA1 /* FirstViewController.h */,
-				89156BB21525E21700359FA1 /* FirstViewController.m */,
 				89156BB41525E21700359FA1 /* first.png */,
 				89156BB61525E21700359FA1 /* first@2x.png */,
-				89156BB81525E21700359FA1 /* SecondViewController.h */,
-				89156BB91525E21700359FA1 /* SecondViewController.m */,
+				89156BB81525E21700359FA1 /* InfoViewController.h */,
+				89156BB91525E21700359FA1 /* InfoViewController.m */,
 				89156BBB1525E21700359FA1 /* second.png */,
 				89156BBD1525E21700359FA1 /* second@2x.png */,
 				89156BA01525E21700359FA1 /* Supporting Files */,
@@ -116,6 +116,22 @@
 				89156BA71525E21700359FA1 /* codeatsix_ios-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89156BC41525E22700359FA1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89156BB11525E21700359FA1 /* EventsViewController.h */,
+				89156BB21525E21700359FA1 /* EventsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		89156BC51525E22D00359FA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +204,8 @@
 			files = (
 				89156BA61525E21700359FA1 /* main.m in Sources */,
 				89156BAA1525E21700359FA1 /* AppDelegate.m in Sources */,
-				89156BB31525E21700359FA1 /* FirstViewController.m in Sources */,
-				89156BBA1525E21700359FA1 /* SecondViewController.m in Sources */,
+				89156BB31525E21700359FA1 /* EventsViewController.m in Sources */,
+				89156BBA1525E21700359FA1 /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

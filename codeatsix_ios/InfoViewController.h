@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  codeatsix_ios
 //
 //  Created by Marin Usalj on 3/30/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface InfoViewController : UIViewController
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com | linkedin.com/marin.usalj. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "InfoViewController.h"
 
-@interface SecondViewController ()
+@interface InfoViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation InfoViewController
 
 - (void)viewDidLoad
 {

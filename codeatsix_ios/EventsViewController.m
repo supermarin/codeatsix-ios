@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com | linkedin.com/marin.usalj. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "EventsViewController.h"
 
-@interface FirstViewController ()
+@interface EventsViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation EventsViewController
 
 - (void)viewDidLoad
 {
