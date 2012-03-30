@@ -43,6 +43,9 @@
 		89156C2415261A6A00359FA1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C2115261A6A00359FA1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		89156C2515261A6A00359FA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 89156C2215261A6A00359FA1 /* README.md */; };
 		89156C3115261BD700359FA1 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C3015261BD700359FA1 /* EventCell.m */; };
+		89156C37152623C300359FA1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C36152623C300359FA1 /* MapKit.framework */; };
+		89156C3E1526250D00359FA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C3D1526250D00359FA1 /* CoreLocation.framework */; };
+		89156C4115262E7400359FA1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C4015262E7400359FA1 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,10 @@
 		89156C2215261A6A00359FA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		89156C2F15261BD700359FA1 /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		89156C3015261BD700359FA1 /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		89156C36152623C300359FA1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		89156C3D1526250D00359FA1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		89156C3F15262E7400359FA1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		89156C4015262E7400359FA1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89156C3E1526250D00359FA1 /* CoreLocation.framework in Frameworks */,
+				89156C37152623C300359FA1 /* MapKit.framework in Frameworks */,
 				89156BFF1525F79F00359FA1 /* libz.dylib in Frameworks */,
 				89156B9E1525E21700359FA1 /* CoreGraphics.framework in Frameworks */,
 				89156BFD1525F78C00359FA1 /* MobileCoreServices.framework in Frameworks */,
@@ -148,6 +157,8 @@
 		89156B981525E21700359FA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89156C3D1526250D00359FA1 /* CoreLocation.framework */,
+				89156C36152623C300359FA1 /* MapKit.framework */,
 				89156C1E15261A6A00359FA1 /* JSONKit */,
 				89156C071525F99800359FA1 /* Reachability */,
 				89156BDB1525F75500359FA1 /* ASIHTTP */,
@@ -200,6 +211,8 @@
 				89156BCF1525F69D00359FA1 /* EventsViewController.m */,
 				89156BD01525F69D00359FA1 /* InfoViewController.h */,
 				89156BD11525F69D00359FA1 /* InfoViewController.m */,
+				89156C3F15262E7400359FA1 /* MapViewController.h */,
+				89156C4015262E7400359FA1 /* MapViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -376,6 +389,7 @@
 				89156C0D1526152C00359FA1 /* Event.m in Sources */,
 				89156C2415261A6A00359FA1 /* JSONKit.m in Sources */,
 				89156C3115261BD700359FA1 /* EventCell.m in Sources */,
+				89156C4115262E7400359FA1 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

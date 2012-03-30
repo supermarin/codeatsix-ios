@@ -54,11 +54,15 @@ static NSString *EVENT_CELL = @"EventCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [events count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [events count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[events objectAtIndex:section] formattedEventDate];
 }
 
 #pragma mark - Request performer delegate
