@@ -7,23 +7,69 @@
 //
 
 #import "EventsViewController.h"
+#import "Server.h"
+#import "Event.h"
 
-@interface EventsViewController ()
-
+@interface EventsViewController () {
+    RequestPerformer *performer;
+    NSArray *events;
+}
 @end
 
 @implementation EventsViewController
+static NSString *CellIdentifier = @"EventCell";
+
+#pragma mark - Tableview delegate
+
+- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event {
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+
+#pragma mark - Tableview datasource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    [self configureCell:cell withEvent:[events objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [events count];
+}
+
+#pragma mark - Request performer delegate
+
+- (void)requestFinishedByPerformer:(RequestPerformer *)downloader {
+
+    NSLog(@"DOWNLOADED: %@", [downloader downloadedString]);
+}
+
+
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    performer = [[RequestPerformer alloc] initWithDelegate:self];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [performer downloadFromURL:[Server eventsURL]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -34,5 +80,6 @@
         return YES;
     }
 }
+
 
 @end

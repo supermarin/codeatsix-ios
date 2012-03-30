@@ -9,5 +9,17 @@
 #import "Server.h"
 
 @implementation Server
+static NSString *SERVER_URL = @"http://codeatsix.dev/";
+
+
++ (NSString*)serverSlash:(NSString *)path {
+    return [[SERVER_URL stringByAppendingString:path] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)eventsURL {
+    return [self serverSlash:@"events.json"];
+}
+
+
 
 @end

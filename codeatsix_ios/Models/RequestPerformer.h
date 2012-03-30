@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class Downloader;
-@protocol DownloaderDelegate <NSObject>
-- (void)requestFinishedByDownloader:(Downloader *)downloader;
+@class RequestPerformer;
+@protocol RequestPerformerDelegate <NSObject>
+- (void)requestFinishedByPerformer:(RequestPerformer *)downloader;
 @end
 
-@interface Downloader : NSObject
+@interface RequestPerformer : NSObject
 @property(nonatomic, assign) BOOL verbose;
 
 @property(nonatomic, assign) id delegate;
@@ -21,6 +21,6 @@
 @property(nonatomic, readonly) NSString *downloadedString;
 
 
-- (id)initWithDelegate:(id<DownloaderDelegate>)delegate;
+- (id)initWithDelegate:(id<RequestPerformerDelegate>)delegate;
 - (void)downloadFromURL:(NSString *)URL; 
 @end

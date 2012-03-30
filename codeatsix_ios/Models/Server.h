@@ -10,4 +10,8 @@
 
 @interface Server : NSObject
 
++ (NSString *)eventsURL;
+
+
+
 @end

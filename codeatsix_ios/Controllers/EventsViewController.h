@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RequestPerformer.h"
 
-@interface EventsViewController : UIViewController
+@interface EventsViewController : UIViewController<RequestPerformerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com | linkedin.com/marin.usalj. All rights reserved.
 //
 
-#import "Downloader.h"
+#import "RequestPerformer.h"
 #import "ASIHTTPRequest.h"
 #import "UIAlertView+SimplyShow.h"
 
-@interface Downloader ()
+@interface RequestPerformer ()
 @property(nonatomic, retain) ASIHTTPRequest *currentRequest;
 @end
 
-@implementation Downloader
+@implementation RequestPerformer
 @synthesize currentRequest, delegate, downloadedData, downloadedString, verbose;
 
-- (id)initWithDelegate:(id<DownloaderDelegate>)theDelegate
+- (id)initWithDelegate:(id<RequestPerformerDelegate>)theDelegate
 {
     self = [super init];
     if (!self) return nil;
@@ -53,18 +53,23 @@
 
 
 - (void)downloadFromURL:(NSString *)URL {
+    [self setCurrentRequest:nil];
     [self hitTheServer:URL];
+}
+
+- (NSData *)downloadedData {
+    return [self.currentRequest responseData];
+}
+
+- (NSString *)downloadedString {
+    return [self.currentRequest responseString];
 }
 
 #pragma mark - ASIHTTP delegate
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
-    
-    downloadedData = [request responseData];
-    downloadedString = [request responseString];
-        
-    [delegate requestFinishedByDownloader:self];
-    [self setCurrentRequest:nil];
+
+    [delegate requestFinishedByPerformer:self];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
