@@ -7,9 +7,11 @@
 //
 
 #import "MapViewController.h"
+#import "MeetupLocation.h"
 
-@interface MapViewController ()
-
+@interface MapViewController () {
+    MeetupLocation *infinumLocation;
+}
 @end
 
 @implementation MapViewController
@@ -18,15 +20,10 @@
 
 #pragma mark - Private
 
-- (CLLocationCoordinate2D)infinumLocation {
-    
-    return CLLocationCoordinate2DMake(45.792784, 15.962706);
-}
-
 - (void)centerTheMapAroundInfinum {
     
     mapView.region = 
-    MKCoordinateRegionMake([self infinumLocation], 
+    MKCoordinateRegionMake(infinumLocation.coordinate, 
                            MKCoordinateSpanMake(0.008, 0.008));
     
 }
@@ -37,12 +34,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    infinumLocation = [MeetupLocation new];
     [self centerTheMapAroundInfinum];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [mapView addAnnotation:infinumLocation];
 }
 
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    infinumLocation = nil;
     [super viewDidUnload];
 }
 

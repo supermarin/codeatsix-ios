@@ -46,6 +46,7 @@
 		89156C37152623C300359FA1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C36152623C300359FA1 /* MapKit.framework */; };
 		89156C3E1526250D00359FA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C3D1526250D00359FA1 /* CoreLocation.framework */; };
 		89156C4115262E7400359FA1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C4015262E7400359FA1 /* MapViewController.m */; };
+		89156C44152630BA00359FA1 /* MeetupLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C43152630BA00359FA1 /* MeetupLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,8 @@
 		89156C3D1526250D00359FA1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		89156C3F15262E7400359FA1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		89156C4015262E7400359FA1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		89156C42152630BA00359FA1 /* MeetupLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupLocation.h; sourceTree = "<group>"; };
+		89156C43152630BA00359FA1 /* MeetupLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				89156BD41525F69D00359FA1 /* Server.m */,
 				89156C0B1526152C00359FA1 /* Event.h */,
 				89156C0C1526152C00359FA1 /* Event.m */,
+				89156C42152630BA00359FA1 /* MeetupLocation.h */,
+				89156C43152630BA00359FA1 /* MeetupLocation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				89156C2415261A6A00359FA1 /* JSONKit.m in Sources */,
 				89156C3115261BD700359FA1 /* EventCell.m in Sources */,
 				89156C4115262E7400359FA1 /* MapViewController.m in Sources */,
+				89156C44152630BA00359FA1 /* MeetupLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
