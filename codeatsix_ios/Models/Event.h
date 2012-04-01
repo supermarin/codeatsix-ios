@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSNumber *is_active;
 @property (strong, nonatomic) NSDate *scheduled_at;
 @property (readonly) NSString *formattedEventDate;
-
+@property (strong, nonatomic) NSArray *persons;
 - (id)initWithDictionary:(NSDictionary *)dict;
 @end

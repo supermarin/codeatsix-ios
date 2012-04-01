@@ -11,6 +11,7 @@
 #import "Event.h"
 #import "JSONKit.h"
 #import "EventCell.h"
+#import "EventDetailsViewController.h"
 
 @interface EventsViewController () {
     IBOutlet UITableView *eventsTableview;
@@ -20,6 +21,9 @@
 @end
 
 @implementation EventsViewController
+@synthesize eventDateButton;
+@synthesize eventTitleLabel;
+@synthesize numberOfParticipantsLabel;
 static NSString *EVENT_CELL = @"EventCell";
 
 #pragma mark - Private
@@ -33,8 +37,18 @@ static NSString *EVENT_CELL = @"EventCell";
     return allEvents;
 }
 
+- (NSArray *)upcomingEvents {
+    return [events subarrayWithRange:NSMakeRange(1, [events count])];
+}
 
+- (Event *)nextEvent {
+    return [events objectAtIndex:0];
+}
 
+- (void)updateLabels {
+    eventTitleLabel.text = [self nextEvent].title;
+    numberOfParticipantsLabel.text = [NSString stringWithFormat:@"%i", [[self nextEvent].persons count]];
+}
 
 #pragma mark - Tableview delegate
 
@@ -49,7 +63,7 @@ static NSString *EVENT_CELL = @"EventCell";
     
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:EVENT_CELL];
     
-    [cell setEvent:[events objectAtIndex:indexPath.row]];
+    [cell setEvent:[events objectAtIndex:indexPath.section]];
     return cell;
 }
 
@@ -58,19 +72,17 @@ static NSString *EVENT_CELL = @"EventCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [events count];
+    return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[events objectAtIndex:section] formattedEventDate];
-}
 
 #pragma mark - Request performer delegate
 
 - (void)requestFinishedByPerformer:(RequestPerformer *)downloader {
 
-    events = [self createEventsFromDictionaries:[[downloader downloadedString] objectFromJSONString]];
+    events = [self createEventsFromDictionaries:[[[downloader downloadedString] objectFromJSONString] valueForKey:@"events"]];
     [eventsTableview reloadData];
+    [self updateLabels];
 }
 
 
@@ -85,6 +97,9 @@ static NSString *EVENT_CELL = @"EventCell";
 }
 
 - (void)viewDidUnload {
+    [self setEventDateButton:nil];
+    [self setEventTitleLabel:nil];
+    [self setNumberOfParticipantsLabel:nil];
     [super viewDidUnload];
 
     events = nil;
@@ -107,5 +122,17 @@ static NSString *EVENT_CELL = @"EventCell";
     }
 }
 
+#pragma mark - Segues
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [(EventDetailsViewController *)segue.destinationViewController 
+     setEvent:[events objectAtIndex:[eventsTableview indexPathForSelectedRow].row]];
+}
+
+
+#pragma mark - IBActions
+
+- (IBAction)signUpPressed:(id)sender {
+}
 @end

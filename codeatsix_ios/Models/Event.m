@@ -9,7 +9,7 @@
 #import "Event.h"
 
 @implementation Event
-@synthesize body, slug, title, report, event_id, is_active, announcement, scheduled_at;
+@synthesize body, slug, title, report, event_id, is_active, announcement, scheduled_at, persons;
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     self = [super init];
@@ -28,8 +28,6 @@
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
     
-    NSLog(@"INCOMING %@", dateInString);
-    NSLog(@"PARSED: %@", [formatter dateFromString:dateInString]);
     return [formatter dateFromString:dateInString];
 }
 
@@ -40,8 +38,9 @@
     self.announcement = [dict valueForKey:@"announcement"];
     self.title = [dict valueForKey:@"title"];
     self.event_id = [dict valueForKey:@"id"];
-    
-    self.scheduled_at = [self initializeDateFromString:[dict valueForKey:@"scheduled_at"]];
+    self.scheduled_at = [dict valueForKey:@"scheduled_at"];
+    self.persons = [dict valueForKey:@"persons"];
+//    self.scheduled_at = [self initializeDateFromString:[dict valueForKey:@"scheduled_at"]];
 }
 
 #pragma mark - Public

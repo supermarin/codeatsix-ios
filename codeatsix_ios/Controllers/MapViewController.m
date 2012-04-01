@@ -28,6 +28,11 @@
     
 }
 
+- (UIButton *)setUpRightCalloutAccessoryButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [button addTarget:self action:@selector(getDirectionsPressed:) forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
 
 #pragma mark - View lifecycle
 
@@ -53,7 +58,29 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
+}
+
+
+#pragma mark - MKMapView delegate
+
+- (void)mapView:(MKMapView *)theMapView didSelectAnnotationView:(MKAnnotationView *)view {
+    if ([view.annotation isEqual:mapView.userLocation]) return;
+    
+    view.rightCalloutAccessoryView = [self setUpRightCalloutAccessoryButton];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)getDirectionsPressed:(id)sender {
+    NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?daddr=%f,%f&saddr='Current Location'",                   
+                     infinumLocation.coordinate.latitude, infinumLocation.coordinate.longitude];
+    
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:url]];
 }
 
 @end

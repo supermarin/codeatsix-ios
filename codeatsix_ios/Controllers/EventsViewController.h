@@ -11,4 +11,12 @@
 
 @interface EventsViewController : UIViewController<RequestPerformerDelegate, UITableViewDelegate, UITableViewDataSource>
 
+
+@property (strong, nonatomic) IBOutlet UIButton *eventDateButton;
+@property (strong, nonatomic) IBOutlet UILabel *eventTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numberOfParticipantsLabel;
+
+
+- (IBAction)signUpPressed:(id)sender;
+
 @end

@@ -10,7 +10,7 @@
 #import "Event.h"
 
 @implementation EventCell
-@synthesize eventTitleLabel, event;
+@synthesize eventTitleLabel, event, personsCountLabel;
 
 - (void)dealloc {
     eventTitleLabel = nil;
@@ -22,5 +22,6 @@
     
     event = newEvent;
     eventTitleLabel.text = self.event.title;
+    personsCountLabel.text = [NSString stringWithFormat:@"%i", [self.event.persons count]];
 }
 @end

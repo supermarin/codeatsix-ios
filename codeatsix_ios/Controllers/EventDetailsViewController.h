@@ -1,5 +1,5 @@
 //
-//  EventCell.h
+//  EventDetailsViewControllerViewController.h
 //  codeatsix_ios
 //
 //  Created by Marin Usalj on 3/30/12.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Event;
 
-@interface EventCell : UITableViewCell
+@class Event;
+@interface EventDetailsViewController : UIViewController
 
 @property(strong, nonatomic) Event *event;
-@property(strong, nonatomic) IBOutlet UILabel *eventTitleLabel;
-@property(strong, nonatomic) IBOutlet UILabel *personsCountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *announcementLabel;
+
 @end
