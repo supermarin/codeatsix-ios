@@ -60,7 +60,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     }
 }
 
-- (void)updateLabels {
+- (void)updateLabelsAndSignupButton {
+    
     eventTitleLabel.text = [self nextEvent].title;
     numberOfParticipantsLabel.text = [NSString stringWithFormat:@"%i", [[self nextEvent].persons count]];
     eventDescriptionTextView.text = [self nextEvent].announcement;
@@ -128,7 +129,11 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
               [[[downloader downloadedString] objectFromJSONString] valueForKey:@"events"]];
 
     [eventsTableview reloadData];
-    [self updateLabels];
+    [self updateLabelsAndSignupButton];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        [eventsTableview setAlpha:1];
+    }];
 }
 
 
