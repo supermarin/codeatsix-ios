@@ -64,6 +64,7 @@
 		89156C641528BDF500359FA1 /* 34-coffee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C621528BDF500359FA1 /* 34-coffee@2x.png */; };
 		89156C671528BF4F00359FA1 /* Secretary.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C661528BF4F00359FA1 /* Secretary.m */; };
 		89156C691528CBBF00359FA1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C681528CBBF00359FA1 /* EventKit.framework */; };
+		8964269F152A2FC9006B1E87 /* LoadingSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8964269E152A2FC9006B1E87 /* LoadingSpinner.m */; };
 		899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997198F1529E13E00777546 /* PersonDetailsViewController.m */; };
 		89971993152A012800777546 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 89971992152A012800777546 /* UserData.m */; };
 /* End PBXBuildFile section */
@@ -156,6 +157,8 @@
 		89156C651528BF4F00359FA1 /* Secretary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secretary.h; sourceTree = "<group>"; };
 		89156C661528BF4F00359FA1 /* Secretary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secretary.m; sourceTree = "<group>"; };
 		89156C681528CBBF00359FA1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		8964269D152A2FC9006B1E87 /* LoadingSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingSpinner.h; sourceTree = "<group>"; };
+		8964269E152A2FC9006B1E87 /* LoadingSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingSpinner.m; sourceTree = "<group>"; };
 		8997198E1529E13E00777546 /* PersonDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailsViewController.h; sourceTree = "<group>"; };
 		8997198F1529E13E00777546 /* PersonDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailsViewController.m; sourceTree = "<group>"; };
 		89971991152A012800777546 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 		89156C2E15261BD700359FA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8964269D152A2FC9006B1E87 /* LoadingSpinner.h */,
+				8964269E152A2FC9006B1E87 /* LoadingSpinner.m */,
 				89156C2F15261BD700359FA1 /* EventCell.h */,
 				89156C3015261BD700359FA1 /* EventCell.m */,
 			);
@@ -488,6 +493,7 @@
 				89156C671528BF4F00359FA1 /* Secretary.m in Sources */,
 				899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */,
 				89971993152A012800777546 /* UserData.m in Sources */,
+				8964269F152A2FC9006B1E87 /* LoadingSpinner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

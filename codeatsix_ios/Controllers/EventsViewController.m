@@ -16,9 +16,12 @@
 #import "ASIFormDataRequest.h"
 #import "UserData.h"
 #import "UIAlertView+SimplyShow.h"
+#import "LoadingSpinner.h"
 
 @interface EventsViewController () {
     IBOutlet UITableView *eventsTableview;
+    IBOutlet LoadingSpinner *spinner;
+    
     RequestPerformer *performer;
     NSArray *events;
 }
@@ -33,6 +36,7 @@
 static NSString *EVENT_CELL = @"EventCell";
 static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
+
 #pragma mark - Private
 
 - (NSArray *)createEventsFromDictionaries:(NSArray *)eventsInDicts {
@@ -41,12 +45,13 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     for (NSDictionary *eventInDict in eventsInDicts)
         [allEvents addObject:[[Event alloc] initWithDictionary:eventInDict]];
     
-    return allEvents;
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"scheduled_at" ascending:YES];
+    return [allEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
 }
 
 - (NSArray *)upcomingEvents {
     @try {
-        return [events subarrayWithRange:NSMakeRange(1, [events count])];
+        return [events subarrayWithRange:NSMakeRange(1, [events count] - 1)];
     }
     @catch (NSException *exception) {
         return 0;
@@ -114,7 +119,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:EVENT_CELL];
     
-    [cell setEvent:[[self upcomingEvents] objectAtIndex:indexPath.section]];
+    [cell setEvent:[[self upcomingEvents] objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -140,6 +145,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [UIView animateWithDuration:0.4 animations:^{
         [eventsTableview setAlpha:1];
     }];
+    
+    [spinner stopSpinning];
 }
 
 
@@ -168,6 +175,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [super viewDidLoad];
     
     performer = [[RequestPerformer alloc] initWithDelegate:self];
+    [spinner.titleLabel setText:@"Retrieving events..."];
+    [spinner startSpinning];
 }
 
 - (void)viewDidUnload {
