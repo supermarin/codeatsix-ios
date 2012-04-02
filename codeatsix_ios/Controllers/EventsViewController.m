@@ -45,7 +45,12 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 }
 
 - (NSArray *)upcomingEvents {
-    return [events subarrayWithRange:NSMakeRange(1, [events count])];
+    @try {
+        return [events subarrayWithRange:NSMakeRange(1, [events count])];
+    }
+    @catch (NSException *exception) {
+        return 0;
+    }
 }
 
 - (Event *)nextEvent {
@@ -108,16 +113,16 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:EVENT_CELL];
     
-    [cell setEvent:[events objectAtIndex:indexPath.section]];
+    [cell setEvent:[[self upcomingEvents] objectAtIndex:indexPath.section]];
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [events count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [[self upcomingEvents] count];
 }
 
 
