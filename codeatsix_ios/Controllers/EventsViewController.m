@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  EventsViewController.m
 //  codeatsix_ios
 //
 //  Created by Marin Usalj on 3/30/12.
@@ -12,6 +12,10 @@
 #import "JSONKit.h"
 #import "EventCell.h"
 #import "EventDetailsViewController.h"
+#import "Secretary.h"
+#import "ASIFormDataRequest.h"
+#import "UserData.h"
+#import "UIAlertView+SimplyShow.h"
 
 @interface EventsViewController () {
     IBOutlet UITableView *eventsTableview;
@@ -24,7 +28,10 @@
 @synthesize eventDateButton;
 @synthesize eventTitleLabel;
 @synthesize numberOfParticipantsLabel;
+@synthesize eventDescriptionTextView;
+@synthesize signUpButton;
 static NSString *EVENT_CELL = @"EventCell";
+static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
 #pragma mark - Private
 
@@ -45,9 +52,46 @@ static NSString *EVENT_CELL = @"EventCell";
     return [events objectAtIndex:0];
 }
 
+- (void)disableSignupButtonIfAlreadyApplied {
+    for (NSDictionary *person in [self nextEvent].persons) {
+        
+        if ([[person valueForKey:@"email"] isEqualToString:[[[UserData instance] personDictionary] valueForKey:@"email"]])
+            signUpButton.enabled = NO;
+    }
+}
+
 - (void)updateLabels {
     eventTitleLabel.text = [self nextEvent].title;
     numberOfParticipantsLabel.text = [NSString stringWithFormat:@"%i", [[self nextEvent].persons count]];
+    eventDescriptionTextView.text = [self nextEvent].announcement;
+
+    [self disableSignupButtonIfAlreadyApplied];
+}
+
+
+- (NSDictionary *)params {
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setValue:[self nextEvent].event_id forKey:@"event_id"];
+    [params setValue:[[UserData instance] personDictionary] forKey:@"person"];
+    
+    return params;
+}
+
+- (void)postEventApplicationToServer {
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[Server signupURL]]];
+    [request addRequestHeader: @"Content-Type" value: @"application/json; charset=utf-8"];
+    
+    [request appendPostData:[[self params].JSONString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
+- (void)presentUserDetailsController {
+    PersonDetailsViewController *controller = [[self storyboard] instantiateViewControllerWithIdentifier:@"PersonDetailsController"];
+    
+    [controller setDelegate:self];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - Tableview delegate
@@ -80,11 +124,30 @@ static NSString *EVENT_CELL = @"EventCell";
 
 - (void)requestFinishedByPerformer:(RequestPerformer *)downloader {
 
-    events = [self createEventsFromDictionaries:[[[downloader downloadedString] objectFromJSONString] valueForKey:@"events"]];
+    events = [self createEventsFromDictionaries:
+              [[[downloader downloadedString] objectFromJSONString] valueForKey:@"events"]];
+
     [eventsTableview reloadData];
     [self updateLabels];
 }
 
+
+#pragma mark - ASIHTTP delegate
+
+- (void)requestFinished:(ASIHTTPRequest *)request {
+    [UIAlertView showWithTitle:@"" 
+                    andMessage:[[[request responseString] objectFromJSONString] valueForKey:@"message"]];
+
+    NSLog(@"response: %@", [request responseString]);
+}
+
+
+#pragma mark - Person Details delegate
+
+- (void)personDetailsHaveBeenStored {
+    
+    [self postEventApplicationToServer];
+}
 
 
 #pragma mark - View lifecycle
@@ -100,6 +163,8 @@ static NSString *EVENT_CELL = @"EventCell";
     [self setEventDateButton:nil];
     [self setEventTitleLabel:nil];
     [self setNumberOfParticipantsLabel:nil];
+    [self setEventDescriptionTextView:nil];
+    [self setSignUpButton:nil];
     [super viewDidUnload];
 
     events = nil;
@@ -126,13 +191,34 @@ static NSString *EVENT_CELL = @"EventCell";
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [(EventDetailsViewController *)segue.destinationViewController 
-     setEvent:[events objectAtIndex:[eventsTableview indexPathForSelectedRow].row]];
+
+    if ([segue.identifier isEqualToString:PERSON_DETAILS_SEGUE])
+        [(PersonDetailsViewController *)segue.destinationViewController setDelegate:self];
+    
+    else
+        [(EventDetailsViewController *)segue.destinationViewController 
+            setEvent:[events objectAtIndex:[eventsTableview indexPathForSelectedRow].row]];
 }
 
 
 #pragma mark - IBActions
 
+
 - (IBAction)signUpPressed:(id)sender {
+    
+    if ([[UserData instance] personDictionary])
+        [self postEventApplicationToServer];
+
+    else
+        [self presentUserDetailsController];
+    
+}
+
+- (IBAction)addToCalendarPressed:(id)sender {
+    
+    [Secretary addToCalendar:[self nextEvent].title 
+                   startDate:[self nextEvent].scheduled_at 
+                     endDate:[self nextEvent].scheduled_at 
+                    location:@"Infinum, Odranska 1"];
 }
 @end

@@ -58,6 +58,14 @@
 		89156C581528962D00359FA1 /* prijavi_se@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C571528962D00359FA1 /* prijavi_se@2x.png */; };
 		89156C5B15289F6E00359FA1 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C5915289F6E00359FA1 /* 83-calendar.png */; };
 		89156C5C15289F6E00359FA1 /* 83-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C5A15289F6E00359FA1 /* 83-calendar@2x.png */; };
+		89156C5F1528BCD600359FA1 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C5D1528BCD500359FA1 /* 112-group.png */; };
+		89156C601528BCD600359FA1 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C5E1528BCD500359FA1 /* 112-group@2x.png */; };
+		89156C631528BDF500359FA1 /* 34-coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C611528BDF500359FA1 /* 34-coffee.png */; };
+		89156C641528BDF500359FA1 /* 34-coffee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C621528BDF500359FA1 /* 34-coffee@2x.png */; };
+		89156C671528BF4F00359FA1 /* Secretary.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C661528BF4F00359FA1 /* Secretary.m */; };
+		89156C691528CBBF00359FA1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89156C681528CBBF00359FA1 /* EventKit.framework */; };
+		899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997198F1529E13E00777546 /* PersonDetailsViewController.m */; };
+		89971993152A012800777546 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 89971992152A012800777546 /* UserData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +149,17 @@
 		89156C571528962D00359FA1 /* prijavi_se@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prijavi_se@2x.png"; sourceTree = "<group>"; };
 		89156C5915289F6E00359FA1 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		89156C5A15289F6E00359FA1 /* 83-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar@2x.png"; sourceTree = "<group>"; };
+		89156C5D1528BCD500359FA1 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		89156C5E1528BCD500359FA1 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
+		89156C611528BDF500359FA1 /* 34-coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "34-coffee.png"; sourceTree = "<group>"; };
+		89156C621528BDF500359FA1 /* 34-coffee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "34-coffee@2x.png"; sourceTree = "<group>"; };
+		89156C651528BF4F00359FA1 /* Secretary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secretary.h; sourceTree = "<group>"; };
+		89156C661528BF4F00359FA1 /* Secretary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secretary.m; sourceTree = "<group>"; };
+		89156C681528CBBF00359FA1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		8997198E1529E13E00777546 /* PersonDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailsViewController.h; sourceTree = "<group>"; };
+		8997198F1529E13E00777546 /* PersonDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailsViewController.m; sourceTree = "<group>"; };
+		89971991152A012800777546 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		89971992152A012800777546 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89156C691528CBBF00359FA1 /* EventKit.framework in Frameworks */,
 				89156C3E1526250D00359FA1 /* CoreLocation.framework in Frameworks */,
 				89156C37152623C300359FA1 /* MapKit.framework in Frameworks */,
 				89156BFF1525F79F00359FA1 /* libz.dylib in Frameworks */,
@@ -183,6 +203,7 @@
 		89156B981525E21700359FA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89156C681528CBBF00359FA1 /* EventKit.framework */,
 				89156C3D1526250D00359FA1 /* CoreLocation.framework */,
 				89156C36152623C300359FA1 /* MapKit.framework */,
 				89156C1E15261A6A00359FA1 /* JSONKit */,
@@ -234,6 +255,8 @@
 		89156BCD1525F69D00359FA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				89156C651528BF4F00359FA1 /* Secretary.h */,
+				89156C661528BF4F00359FA1 /* Secretary.m */,
 				89156BCE1525F69D00359FA1 /* EventsViewController.h */,
 				89156BCF1525F69D00359FA1 /* EventsViewController.m */,
 				89156BD01525F69D00359FA1 /* InfoViewController.h */,
@@ -242,6 +265,8 @@
 				89156C4015262E7400359FA1 /* MapViewController.m */,
 				89156C4A1526362A00359FA1 /* EventDetailsViewController.h */,
 				89156C4B1526362A00359FA1 /* EventDetailsViewController.m */,
+				8997198E1529E13E00777546 /* PersonDetailsViewController.h */,
+				8997198F1529E13E00777546 /* PersonDetailsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +282,8 @@
 				89156C0C1526152C00359FA1 /* Event.m */,
 				89156C42152630BA00359FA1 /* MeetupLocation.h */,
 				89156C43152630BA00359FA1 /* MeetupLocation.m */,
+				89971991152A012800777546 /* UserData.h */,
+				89971992152A012800777546 /* UserData.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +360,10 @@
 		89156C45152633B300359FA1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89156C611528BDF500359FA1 /* 34-coffee.png */,
+				89156C621528BDF500359FA1 /* 34-coffee@2x.png */,
+				89156C5D1528BCD500359FA1 /* 112-group.png */,
+				89156C5E1528BCD500359FA1 /* 112-group@2x.png */,
 				89156C5915289F6E00359FA1 /* 83-calendar.png */,
 				89156C5A15289F6E00359FA1 /* 83-calendar@2x.png */,
 				89156C551528956900359FA1 /* prijavi_se.png */,
@@ -417,6 +448,10 @@
 				89156C581528962D00359FA1 /* prijavi_se@2x.png in Resources */,
 				89156C5B15289F6E00359FA1 /* 83-calendar.png in Resources */,
 				89156C5C15289F6E00359FA1 /* 83-calendar@2x.png in Resources */,
+				89156C5F1528BCD600359FA1 /* 112-group.png in Resources */,
+				89156C601528BCD600359FA1 /* 112-group@2x.png in Resources */,
+				89156C631528BDF500359FA1 /* 34-coffee.png in Resources */,
+				89156C641528BDF500359FA1 /* 34-coffee@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +485,9 @@
 				89156C4115262E7400359FA1 /* MapViewController.m in Sources */,
 				89156C44152630BA00359FA1 /* MeetupLocation.m in Sources */,
 				89156C4C1526362A00359FA1 /* EventDetailsViewController.m in Sources */,
+				89156C671528BF4F00359FA1 /* Secretary.m in Sources */,
+				899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */,
+				89971993152A012800777546 /* UserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

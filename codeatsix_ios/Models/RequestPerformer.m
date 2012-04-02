@@ -8,6 +8,7 @@
 
 #import "RequestPerformer.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "UIAlertView+SimplyShow.h"
 
 @interface RequestPerformer ()

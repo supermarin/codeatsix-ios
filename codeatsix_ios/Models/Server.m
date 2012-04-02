@@ -20,6 +20,8 @@ static NSString *SERVER_URL = @"http://codeatsix.dev/";
     return [self serverSlash:@"events.json"];
 }
 
-
++ (NSString *)signupURL {
+    return [self serverSlash:@"apply.json"];
+}
 
 @end

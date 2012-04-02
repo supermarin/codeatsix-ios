@@ -11,7 +11,7 @@
 @interface Server : NSObject
 
 + (NSString *)eventsURL;
-
++ (NSString *)signupURL;
 
 
 @end

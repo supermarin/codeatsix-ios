@@ -6,6 +6,91 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Person Details View Controller-->
+        <scene sceneID="WOB-eX-SsG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LS7-f9-jYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PersonDetailsController" id="MYN-mA-2xf" customClass="PersonDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jB7-pK-a7M">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Ccj-Ny-ocI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ime " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="hUp-F6-PRU">
+                                        <rect key="frame" x="25" y="11" width="36" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Prezime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DEU-yQ-VF1">
+                                        <rect key="frame" x="25" y="76" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="We need those only once" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aqu-um-6nY">
+                                        <rect key="frame" x="64" y="203" width="193" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BR2-h3-nMw">
+                                        <rect key="frame" x="25" y="137" width="53" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="required" minimumFontSize="17" id="Zr8-vM-4L6">
+                                        <rect key="frame" x="20" y="30" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MYN-mA-2xf" id="oLo-da-rPy"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="required" minimumFontSize="17" id="mgI-sF-YSi">
+                                        <rect key="frame" x="20" y="97" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MYN-mA-2xf" id="ZpJ-GX-J0k"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="required" minimumFontSize="17" id="5Zj-N6-bM8">
+                                        <rect key="frame" x="20" y="158" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MYN-mA-2xf" id="k25-AE-css"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B5I-fB-ehc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailField" destination="5Zj-N6-bM8" id="h42-c1-j20"/>
+                        <outlet property="firstNameField" destination="Zr8-vM-4L6" id="Mbq-6O-5LG"/>
+                        <outlet property="lastNameField" destination="mgI-sF-YSi" id="nTl-2J-CoG"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1548" y="426"/>
+        </scene>
         <!--Events View Controller - First-->
         <scene sceneID="11">
             <objects>
@@ -15,13 +100,13 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" id="siF-Gc-Ock">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="siF-Gc-Ock">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.90000000000000002" green="0.90000000000000002" blue="0.0" alpha="0.45000000000000001" colorSpace="deviceRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="kDL-S6-Yjd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="390"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slijedeći meetup:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xCc-AH-nAI">
@@ -32,8 +117,8 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="  Nadolazeći meetupovi:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dvy-Db-p1U">
-                                            <rect key="frame" x="0.0" y="345" width="320" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="0.0" y="365" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -41,7 +126,7 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EVENT NAME WITH 2 ROWS YEAH C=MON" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aDT-Vu-aC1">
                                             <rect key="frame" x="25" y="47" width="270" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.90000000000000002" green="0.90000000000000002" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,18 +134,18 @@
                                             <size key="shadowOffset" width="0.0" height="2"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="user.png" id="hUm-jg-uX7">
-                                            <rect key="frame" x="178" y="286" width="24" height="21"/>
+                                            <rect key="frame" x="164" y="296" width="24" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="( 18 )" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fBA-hB-LHZ">
-                                            <rect key="frame" x="219" y="286" width="42" height="21"/>
+                                            <rect key="frame" x="194" y="296" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ktG-gb-f8J">
-                                            <rect key="frame" x="60" y="278" width="95" height="38"/>
+                                            <rect key="frame" x="46" y="288" width="95" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" image="prijavi_se.png">
@@ -86,10 +171,13 @@
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="addToCalendarPressed:" destination="2" eventType="touchUpInside" id="WVl-Zl-bLI"/>
+                                            </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mhn-Fk-HUx">
-                                            <rect key="frame" x="14" y="95" width="292" height="169"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="mhn-Fk-HUx">
+                                            <rect key="frame" x="14" y="95" width="292" height="185"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">O ovoj instanci
 
@@ -100,37 +188,52 @@ Napokon! Prvi i jubilarni Code at six za svega deset dana. Dođite, bit će turb
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HlR-W7-uD7">
+                                            <rect key="frame" x="252" y="292" width="23" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" image="83-calendar.png">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addToCalendarPressed:" destination="2" eventType="touchUpInside" id="wuq-Tc-gGb"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.15183052007299269" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="110" id="qBC-kd-Rou" customClass="EventCell">
-                                        <rect key="frame" x="0.0" y="392" width="320" height="110"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="94" id="qBC-kd-Rou" customClass="EventCell">
+                                        <rect key="frame" x="0.0" y="412" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EVENT NAME WITH 2 ROWS YEAH C=MON" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RtE-xZ-pP4">
-                                                    <rect key="frame" x="20" y="14" width="270" height="38"/>
+                                                    <rect key="frame" x="20" y="3" width="270" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.90000000000000002" green="0.90000000000000002" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="user.png" id="2aj-Uh-diU">
-                                                    <rect key="frame" x="20" y="68" width="24" height="21"/>
+                                                    <rect key="frame" x="20" y="57" width="24" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="( 18 )" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="p1u-km-ivv">
-                                                    <rect key="frame" x="61" y="68" width="42" height="21"/>
+                                                    <rect key="frame" x="61" y="57" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Petak, 20.12.2012." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3ip-Ft-LNp">
-                                                    <rect key="frame" x="150" y="68" width="143" height="21"/>
+                                                    <rect key="frame" x="150" y="57" width="143" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -158,9 +261,11 @@ Napokon! Prvi i jubilarni Code at six za svega deset dana. Dođite, bit će turb
                     <navigationItem key="navigationItem" id="Bou-SU-c7S"/>
                     <connections>
                         <outlet property="eventDateButton" destination="OB5-mu-LlU" id="cZY-oy-Us2"/>
+                        <outlet property="eventDescriptionTextView" destination="mhn-Fk-HUx" id="C9F-3x-ZRO"/>
                         <outlet property="eventTitleLabel" destination="aDT-Vu-aC1" id="9i4-mS-Lil"/>
                         <outlet property="eventsTableview" destination="siF-Gc-Ock" id="OGp-Z8-l5a"/>
                         <outlet property="numberOfParticipantsLabel" destination="fBA-hB-LHZ" id="GJn-yw-bvc"/>
+                        <outlet property="signUpButton" destination="ktG-gb-f8J" id="j6i-pj-DJn"/>
                     </connections>
                 </viewController>
             </objects>
@@ -281,7 +386,7 @@ Također, preduvjet za sudjelovanje je da mrzite SVN svom svojom dušom, i da pr
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="O nama" image="59-info.png" id="6"/>
+                    <tabBarItem key="tabBarItem" title="O nama" image="34-coffee.png" id="6"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="84" y="789"/>
@@ -306,12 +411,12 @@ Također, preduvjet za sudjelovanje je da mrzite SVN svom svojom dušom, i da pr
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller - Events-->
+        <!--Navigation Controller - Meetups-->
         <scene sceneID="epd-LJ-sOD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXw-SU-vGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="WAu-eJ-jfI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Meetups" image="112-group.png" id="7"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="voH-vg-A4s">
@@ -329,8 +434,9 @@ Također, preduvjet za sudjelovanje je da mrzite SVN svom svojom dušom, i da pr
     </scenes>
     <resources>
         <image name="07-map-marker.png" width="16" height="26"/>
-        <image name="59-info.png" width="28" height="28"/>
-        <image name="first" width="16" height="16"/>
+        <image name="112-group.png" width="32" height="21"/>
+        <image name="34-coffee.png" width="24" height="26"/>
+        <image name="83-calendar.png" width="23" height="25"/>
         <image name="prijavi_se.png" width="93" height="31"/>
         <image name="user.png" width="24" height="21"/>
     </resources>
@@ -351,11 +457,14 @@ Također, preduvjet za sudjelovanje je da mrzite SVN svom svojom dušom, i da pr
         <class className="EventsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addToCalendarPressed:"/>
                 <relationship kind="action" name="signUpPressed:"/>
                 <relationship kind="outlet" name="eventDateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="eventDescriptionTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="eventTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="eventsTableview" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="numberOfParticipantsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="InfoViewController" superclassName="UIViewController">
@@ -365,6 +474,14 @@ Također, preduvjet za sudjelovanje je da mrzite SVN svom svojom dušom, i da pr
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="PersonDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>
