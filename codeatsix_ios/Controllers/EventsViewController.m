@@ -70,7 +70,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     eventTitleLabel.text = [self nextEvent].title;
     numberOfParticipantsLabel.text = [NSString stringWithFormat:@"%i", [[self nextEvent].persons count]];
     eventDescriptionTextView.text = [self nextEvent].announcement;
-
+    [eventDateButton setTitle:[self nextEvent].formattedEventDate forState:UIControlStateNormal];
+    
     [self disableSignupButtonIfAlreadyApplied];
 }
 
@@ -227,8 +228,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 - (IBAction)addToCalendarPressed:(id)sender {
     
     [Secretary addToCalendar:[self nextEvent].title 
-                   startDate:[self nextEvent].scheduled_at 
-                     endDate:[self nextEvent].scheduled_at 
+                   startDate:[self nextEvent].scheduled_at
+                     endDate:[[self nextEvent].scheduled_at dateByAddingTimeInterval:7200]
                     location:@"Infinum, Odranska 1"];
 }
 @end

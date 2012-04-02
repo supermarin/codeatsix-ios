@@ -26,7 +26,7 @@
 
 - (NSDate *)initializeDateFromString:(NSString *)dateInString {
     NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss z"];
     
     return [formatter dateFromString:dateInString];
 }
@@ -40,16 +40,15 @@
     self.event_id = [dict valueForKey:@"id"];
     self.scheduled_at = [dict valueForKey:@"scheduled_at"];
     self.persons = [dict valueForKey:@"persons"];
-//    self.scheduled_at = [self initializeDateFromString:[dict valueForKey:@"scheduled_at"]];
+    self.scheduled_at = [self initializeDateFromString:[dict valueForKey:@"scheduled_at"]];
 }
 
 #pragma mark - Public
 
 - (NSString *)formattedEventDate {
     NSDateFormatter *formatter = [NSDateFormatter new];
-    NSLog(@"SELF DATE: %@", self.scheduled_at.class);
-    
-    [formatter setDateFormat:@"WWW, dd.MM, yyyy hh:mm"];
+    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:3600]];
+    [formatter setDateFormat:@"EEEE, dd.MM.yyyy 'at' hh:mm"];
     
     return [formatter stringFromDate:self.scheduled_at];
 }
