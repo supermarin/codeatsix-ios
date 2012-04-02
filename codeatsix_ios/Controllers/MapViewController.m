@@ -80,7 +80,8 @@
     NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?daddr=%f,%f&saddr='Current Location'",                   
                      infinumLocation.coordinate.latitude, infinumLocation.coordinate.longitude];
     
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:url]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:
+                                                 [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 }
 
 @end
