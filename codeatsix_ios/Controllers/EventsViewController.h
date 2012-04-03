@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RequestPerformer.h"
+#import "EventsManager.h"
 #import "PersonDetailsViewController.h"
 
-@interface EventsViewController : UIViewController<RequestPerformerDelegate, UITableViewDelegate, UITableViewDataSource, PersonDetailsDelegate>
+@interface EventsViewController : UIViewController<EventsManagerDelegate, UITableViewDelegate, UITableViewDataSource, PersonDetailsDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UIButton *eventDateButton;

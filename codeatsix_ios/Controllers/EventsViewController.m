@@ -7,9 +7,9 @@
 //
 
 #import "EventsViewController.h"
-#import "Server.h"
+//#import "Server.h"
 #import "Event.h"
-#import "JSONKit.h"
+//#import "JSONKit.h"
 #import "EventCell.h"
 #import "EventDetailsViewController.h"
 #import "Secretary.h"
@@ -22,7 +22,7 @@
     IBOutlet UITableView *eventsTableview;
     IBOutlet LoadingSpinner *spinner;
     
-    RequestPerformer *performer;
+    EventsManager *manager;
     NSArray *events;
 }
 @end
@@ -39,16 +39,6 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
 #pragma mark - Private
 
-- (NSArray *)createEventsFromDictionaries:(NSArray *)eventsInDicts {
-    NSMutableArray *allEvents = [NSMutableArray new];
-    
-    for (NSDictionary *eventInDict in eventsInDicts)
-        [allEvents addObject:[[Event alloc] initWithDictionary:eventInDict]];
-    
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"scheduled_at" ascending:YES];
-    return [allEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
-}
-
 - (NSArray *)upcomingEvents {
     @try {
         return [events subarrayWithRange:NSMakeRange(1, [events count] - 1)];
@@ -63,6 +53,8 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 }
 
 - (void)disableSignupButtonIfAlreadyApplied {
+    signUpButton.enabled = YES;
+    
     for (NSDictionary *person in [self nextEvent].persons) {
         
         if ([[person valueForKey:@"email"] isEqualToString:[[[UserData instance] personDictionary] valueForKey:@"email"]])
@@ -78,25 +70,6 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [eventDateButton setTitle:[self nextEvent].formattedEventDate forState:UIControlStateNormal];
     
     [self disableSignupButtonIfAlreadyApplied];
-}
-
-
-- (NSDictionary *)params {
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    [params setValue:[self nextEvent].event_id forKey:@"event_id"];
-    [params setValue:[[UserData instance] personDictionary] forKey:@"person"];
-    
-    return params;
-}
-
-- (void)postEventApplicationToServer {
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[Server signupURL]]];
-    [request addRequestHeader: @"Content-Type" value: @"application/json; charset=utf-8"];
-    
-    [request appendPostData:[[self params].JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [request setDelegate:self];
-    [request startAsynchronous];
 }
 
 - (void)presentUserDetailsController {
@@ -132,13 +105,12 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 }
 
 
-#pragma mark - Request performer delegate
+#pragma mark - Events Manager delegate
 
-- (void)requestFinishedByPerformer:(RequestPerformer *)downloader {
+- (void)eventsManager:(EventsManager *)manager didRetrieveEvents:(NSArray *)theEvents {
 
-    events = [self createEventsFromDictionaries:
-              [[[downloader downloadedString] objectFromJSONString] valueForKey:@"events"]];
-
+    events = theEvents;
+    
     [eventsTableview reloadData];
     [self updateLabelsAndSignupButton];
     
@@ -149,14 +121,10 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [spinner stopSpinning];
 }
 
-
-#pragma mark - ASIHTTP delegate
-
-- (void)requestFinished:(ASIHTTPRequest *)request {
-    [UIAlertView showWithTitle:@"" 
-                    andMessage:[[[request responseString] objectFromJSONString] valueForKey:@"message"]];
-
-    NSLog(@"response: %@", [request responseString]);
+- (void)successfullyAppliedToEventWithMessage:(NSString *)message {
+    [UIAlertView showWithTitle:@"" andMessage:message];
+    
+    signUpButton.enabled = NO;
 }
 
 
@@ -164,7 +132,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
 - (void)personDetailsHaveBeenStored {
     
-    [self postEventApplicationToServer];
+    [manager signupOnEvent:[self nextEvent]];
 }
 
 
@@ -174,7 +142,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 {
     [super viewDidLoad];
     
-    performer = [[RequestPerformer alloc] initWithDelegate:self];
+    manager = [[EventsManager alloc] initWithDelegate:self];
     [spinner.titleLabel setText:@"Retrieving events..."];
     [spinner startSpinning];
 }
@@ -188,14 +156,14 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [super viewDidUnload];
 
     events = nil;
-    performer = nil;
+    manager = nil;
     eventsTableview = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [performer downloadFromURL:[Server eventsURL]];
+    [manager retrieveEvents];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -227,7 +195,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 - (IBAction)signUpPressed:(id)sender {
     
     if ([[UserData instance] personDictionary])
-        [self postEventApplicationToServer];
+        [manager signupOnEvent:[self nextEvent]];
 
     else
         [self presentUserDetailsController];
