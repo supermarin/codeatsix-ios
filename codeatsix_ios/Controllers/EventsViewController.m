@@ -7,13 +7,9 @@
 //
 
 #import "EventsViewController.h"
-//#import "Server.h"
 #import "Event.h"
-//#import "JSONKit.h"
 #import "EventCell.h"
-#import "EventDetailsViewController.h"
 #import "Secretary.h"
-#import "ASIFormDataRequest.h"
 #import "UserData.h"
 #import "UIAlertView+SimplyShow.h"
 #import "LoadingSpinner.h"
@@ -33,6 +29,7 @@
 @synthesize numberOfParticipantsLabel;
 @synthesize eventDescriptionTextView;
 @synthesize signUpButton;
+@synthesize noEventsView;
 static NSString *EVENT_CELL = @"EventCell";
 static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
@@ -103,7 +100,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self upcomingEvents] count];
 }
-
+ 
 
 #pragma mark - Events Manager delegate
 
@@ -111,12 +108,23 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
     events = theEvents;
     
-    [eventsTableview reloadData];
-    [self updateLabelsAndSignupButton];
+    if ([events count] > 0) {
+        [eventsTableview reloadData];
+        [self updateLabelsAndSignupButton];
+        
+        [UIView animateWithDuration:0.4 animations:^{
+            [eventsTableview setAlpha:1];
+            [noEventsView setAlpha:0];
+        }];
+    }
     
-    [UIView animateWithDuration:0.4 animations:^{
-        [eventsTableview setAlpha:1];
-    }];
+    else {
+        [UIView animateWithDuration:0.4 animations:^{
+            [noEventsView setAlpha:1];
+            [eventsTableview setAlpha:0];
+        }];
+    }
+
     
     [spinner stopSpinning];
 }
@@ -153,6 +161,7 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
     [self setNumberOfParticipantsLabel:nil];
     [self setEventDescriptionTextView:nil];
     [self setSignUpButton:nil];
+    [self setNoEventsView:nil];
     [super viewDidUnload];
 
     events = nil;
@@ -182,10 +191,6 @@ static NSString *PERSON_DETAILS_SEGUE = @"EnterUserDetails";
 
     if ([segue.identifier isEqualToString:PERSON_DETAILS_SEGUE])
         [(PersonDetailsViewController *)segue.destinationViewController setDelegate:self];
-    
-    else
-        [(EventDetailsViewController *)segue.destinationViewController 
-            setEvent:[events objectAtIndex:[eventsTableview indexPathForSelectedRow].row]];
 }
 
 

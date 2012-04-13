@@ -9,7 +9,7 @@
 #import "Server.h"
 
 @implementation Server
-static NSString *SERVER_URL = @"http://codeatsix.infinum.hr/";
+static NSString *SERVER_URL = @"http://codeatsix.dev/";
 
 
 + (NSString*)serverSlash:(NSString *)path {

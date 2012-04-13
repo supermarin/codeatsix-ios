@@ -48,7 +48,6 @@
 		89156C44152630BA00359FA1 /* MeetupLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C43152630BA00359FA1 /* MeetupLocation.m */; };
 		89156C48152633B300359FA1 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C46152633B300359FA1 /* user.png */; };
 		89156C49152633B300359FA1 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C47152633B300359FA1 /* user@2x.png */; };
-		89156C4C1526362A00359FA1 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89156C4B1526362A00359FA1 /* EventDetailsViewController.m */; };
 		89156C4F15263CF900359FA1 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C4D15263CF900359FA1 /* 07-map-marker.png */; };
 		89156C5015263CF900359FA1 /* 07-map-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C4E15263CF900359FA1 /* 07-map-marker@2x.png */; };
 		89156C5315263D3A00359FA1 /* 59-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 89156C5115263D3900359FA1 /* 59-info.png */; };
@@ -138,8 +137,6 @@
 		89156C43152630BA00359FA1 /* MeetupLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupLocation.m; sourceTree = "<group>"; };
 		89156C46152633B300359FA1 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		89156C47152633B300359FA1 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
-		89156C4A1526362A00359FA1 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
-		89156C4B1526362A00359FA1 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		89156C4D15263CF900359FA1 /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
 		89156C4E15263CF900359FA1 /* 07-map-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker@2x.png"; sourceTree = "<group>"; };
 		89156C5115263D3900359FA1 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
@@ -266,8 +263,6 @@
 				89156BD11525F69D00359FA1 /* InfoViewController.m */,
 				89156C3F15262E7400359FA1 /* MapViewController.h */,
 				89156C4015262E7400359FA1 /* MapViewController.m */,
-				89156C4A1526362A00359FA1 /* EventDetailsViewController.h */,
-				89156C4B1526362A00359FA1 /* EventDetailsViewController.m */,
 				8997198E1529E13E00777546 /* PersonDetailsViewController.h */,
 				8997198F1529E13E00777546 /* PersonDetailsViewController.m */,
 			);
@@ -488,7 +483,6 @@
 				89156C3115261BD700359FA1 /* EventCell.m in Sources */,
 				89156C4115262E7400359FA1 /* MapViewController.m in Sources */,
 				89156C44152630BA00359FA1 /* MeetupLocation.m in Sources */,
-				89156C4C1526362A00359FA1 /* EventDetailsViewController.m in Sources */,
 				89156C671528BF4F00359FA1 /* Secretary.m in Sources */,
 				899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */,
 				89971993152A012800777546 /* UserData.m in Sources */,

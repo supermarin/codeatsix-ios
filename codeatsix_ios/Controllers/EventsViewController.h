@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *numberOfParticipantsLabel;
 @property (strong, nonatomic) IBOutlet UITextView *eventDescriptionTextView;
 @property (strong, nonatomic) IBOutlet UIButton *signUpButton;
+@property (strong, nonatomic) IBOutlet UIView *noEventsView;
 
 - (IBAction)signUpPressed:(id)sender;
 - (IBAction)addToCalendarPressed:(id)sender;
