@@ -66,6 +66,8 @@
 		896426A8152A3833006B1E87 /* EventsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 896426A7152A3833006B1E87 /* EventsManager.m */; };
 		899719901529E13E00777546 /* PersonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997198F1529E13E00777546 /* PersonDetailsViewController.m */; };
 		89971993152A012800777546 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 89971992152A012800777546 /* UserData.m */; };
+		89F6BAC815389CC5008FEF73 /* codeatsix-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F6BAC715389CC5008FEF73 /* codeatsix-iphone.png */; };
+		89F6BACA15389CC7008FEF73 /* codeatsix-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F6BAC915389CC7008FEF73 /* codeatsix-iphone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +162,8 @@
 		8997198F1529E13E00777546 /* PersonDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailsViewController.m; sourceTree = "<group>"; };
 		89971991152A012800777546 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		89971992152A012800777546 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		89F6BAC715389CC5008FEF73 /* codeatsix-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeatsix-iphone.png"; sourceTree = "<group>"; };
+		89F6BAC915389CC7008FEF73 /* codeatsix-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeatsix-iphone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 		89156B8A1525E21700359FA1 = {
 			isa = PBXGroup;
 			children = (
+				89F6BAC915389CC7008FEF73 /* codeatsix-iphone@2x.png */,
+				89F6BAC715389CC5008FEF73 /* codeatsix-iphone.png */,
 				89156B9F1525E21700359FA1 /* codeatsix_ios */,
 				89156B981525E21700359FA1 /* Frameworks */,
 				89156B961525E21700359FA1 /* Products */,
@@ -452,6 +458,8 @@
 				89156C601528BCD600359FA1 /* 112-group@2x.png in Resources */,
 				89156C631528BDF500359FA1 /* 34-coffee.png in Resources */,
 				89156C641528BDF500359FA1 /* 34-coffee@2x.png in Resources */,
+				89F6BAC815389CC5008FEF73 /* codeatsix-iphone.png in Resources */,
+				89F6BACA15389CC7008FEF73 /* codeatsix-iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
